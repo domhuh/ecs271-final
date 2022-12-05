@@ -1,0 +1,11 @@
+numpy
+pandas
+alive-progress
+opencv-python
+imageio
+urllib
+tokenizers
+torch
+torchvision
+transformers
+nltk
