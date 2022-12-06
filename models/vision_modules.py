@@ -78,7 +78,7 @@ class S2D(nn.Module):
         norm_layer = partial(nn.BatchNorm2d, eps=0.001, momentum=0.001)
         self.features = nn.Sequential(
                                       TemporalSeparableConv(n_frames, 64, 7, 2, 3, norm_layer),
-                                      nn.MaxPool3d(kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1)),
+                                      nn.MaxPool2d(kernel_size=(3, 3), stride=(2, 2), padding=(1, 1)),
                                       ConvNormActivation(64, 64, kernel_size=1, stride=1, norm_layer=norm_layer,),
                                       TemporalSeparableConv(64, 192, 3, 1, 1, norm_layer),
                                       nn.MaxPool2d(kernel_size=(1, 3), stride=(1, 2), padding=(0, 1)),
